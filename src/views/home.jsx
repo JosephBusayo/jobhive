@@ -1,19 +1,20 @@
 const React = require('react');
+const Common = require('./layouts/common')
 
 
-
-function HelloMessage(props) {
-    console.log(props.title);
+function Home(props) {
     return (
-        <section>
-            {props.jobs.map((job) => (
-                <div key={job._id}>
-                    <h2 >{job.title}</h2>
-                    <p>{job.desc}</p>
-                </div>
-            ))}
-        </section>
+        <Common>
+            <section className='home'>
+                {props.jobs.map((job) => (
+                    <div key={job._id}>
+                        <h2 >{job.title}</h2>
+                        <p>{job.desc}</p>
+                    </div>
+                ))}
+            </section>
+        </Common>
     );
 }
 
-module.exports = HelloMessage;
+module.exports = Home;

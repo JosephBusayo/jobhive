@@ -3,23 +3,22 @@ const express = require('express')
 const session = require('express-session')
 const passport = require('passport')
 const MongoStore = require('connect-mongo')
+const path = require('path');
 const DB = require('./database/index')
-
-//passport strategies
-require('./strategies/local')
-require('./strategies/github')
-//routes
+const app = express()
+const PORT = process.env.PORT || 4001
 const jobRoute = require('./routes/job')
 const authRoute = require('./routes/auth')
+require('./strategies/local')
+require('./strategies/github')
 
 
-const app = express()
-const PORT = process.env.PORT || 3000
 
 // middleware
 app.set("views", __dirname + "/views");
 app.set("view engine", "jsx");
 app.engine("jsx", require("express-react-views").createEngine());
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json())
 app.use(express.urlencoded({ extended: true })) 
 app.use(
@@ -36,8 +35,9 @@ app.use(passport.initialize())
 app.use(passport.session())
 
 
+
 //routes
-app.use('/', jobRoute)
+app.use('/jobs', jobRoute)
 app.use('/auth', authRoute)
 
 

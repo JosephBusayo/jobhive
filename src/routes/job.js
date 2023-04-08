@@ -4,7 +4,7 @@ const router = Router()
 
 
 
-router.get('/jobs', async (req, res) => {
+router.get('/', async (req, res) => {
     try {
         const result = await Job.find().sort({createdAt: -1})
         res.render('home', {title: 'Home', jobs: result})
@@ -14,11 +14,20 @@ router.get('/jobs', async (req, res) => {
     }
 })
 
-router.post('/addjob', async (req, res) => {
+
+router.get('/add', (req, res) => {
+    try{
+        res.render('addjob')
+    }catch(err){
+        console.log(err)
+    }
+})
+
+router.post('/add', async (req, res) => {
     const newJobPost = new Job(req.body)
     try{
         await newJobPost.save()
-        res.send('Ok')
+        res.redirect('/jobs')
     } catch (err) {
         console.log(err)
     }
