@@ -8,19 +8,38 @@ const jobSchema = new Schema({
         type: 'string',
         required: true
     },
-    desc :{
+    company :{
         type: 'string',
         required: true
+    },
+    tag: {
+        type: 'string',
+        required: true
+    },
+    type :{
+        type: 'string',
+        required: true
+    },
+    salary:{
+        type: 'string',
+        required: true
+    },
+
+    
+    desc :{
+        type: 'string',
+    },
+    todo : {
+        type: 'string',
+    },
+    req: {
+        type: 'string',
     },
     link:{
         type: 'string',
         required: true
     },
-    tag: {
-        type: Array,
-        default : [],
-        required: true
-    }
+
 }, {timestamps: true})
 
 

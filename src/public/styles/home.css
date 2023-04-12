@@ -1,0 +1,138 @@
+/*JOB*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand';
+}
+:root{
+    --MAIN-COLOR : #ed8d01
+}
+img{
+    display: block;
+    width: 20px;
+}
+body{
+    margin: 0 auto;
+    padding: 10px 20px;
+    max-width: 1440px;
+}
+.btn{
+    background-color: var(--MAIN-COLOR);
+    padding: 12px 20px;
+    color: white;
+
+    border: none;
+    outline: none;
+    border-radius:5px;
+    font-size: 20px;
+}
+.header-wrapper, .job{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+/*LAPTOP SCREEN*/
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.logo-wrapper{
+    display: flex;
+    align-items: center;
+    gap: 1px;
+    font-size: 45px;
+    line-height: 25px;
+    color: var(--MAIN-COLOR);
+
+    padding: 40px 0;
+}
+.nav-btn-wrapper{
+    display: flex;
+    gap: 20px;
+}
+
+.login:hover{
+    color: var(--MAIN-COLOR);
+    background-color: transparent;
+}
+.register{
+    background-color: transparent;
+    color: var(--MAIN-COLOR);
+}
+.register:hover{
+    border: 1px solid var(--MAIN-COLOR);
+}
+
+/*body*/
+.header-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header-text{
+    font-size: 28px;
+    line-height: 28px;
+    margin: 40px 0
+}
+.add{
+    background: #C4FFD1;
+    color: black
+}
+.job{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.job-detail-container{
+    background: #FFFFFF;
+    box-shadow: 2px 2px 10px 1px rgba(147, 147, 147, 0.35);
+    border-radius: 12px;
+
+    display: flex;
+    flex-direction: column;
+    gap:14px;
+    justify-content: space-evenly;
+    padding: 20px 30px;
+    min-width: 370px;
+}
+
+.job-title{
+    font-family: 'Quicksand';
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 23px;
+}
+.job-loc-wrapper, .job-tag-wrapper{
+    display: flex;
+    align-items: center;
+    gap: 15px
+}
+.loc-icon, .tag-icon, .logo-image{
+    width: fit-content;
+}
+.job-loc, .job-tag, .job-salary, .job-type{
+    font-size: 20px;
+    line-height: 20px;
+    width: fit-content;
+}
+.job-type{
+    background: #C4FFD1;
+    border-radius: 3px;
+    padding: 10px 24px;
+}
+.job-salary{
+    background: var(--MAIN-COLOR);
+    border-radius: 5px;
+    color: white;
+    padding: 10px 24px;
+}
+.job-date{
+    font-size: 18px;
+    line-height: 18px;
+}

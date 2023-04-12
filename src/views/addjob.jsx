@@ -1,25 +1,37 @@
 const React = require('react');
 const Common = require('./layouts/common')
+const Nav = require('./layouts/navbar')
 
 
 function Addjob(props) {
   return (
     <Common>
-      <form action="/jobs/add" className="job-form" method="POST">
-        <label htmlFor="title">Job title:</label>
-        <input type="text" id="title" name="title" required />
+      <Nav />
+      
+      <section className="job-form-wrapper">
+        <form action="/jobs/add" className="job-form" method="POST">
+          <input type="text" placeholder="Job Title" id="title" name="title" required />
 
-        <label htmlFor="desc">Job desc:</label>
-        <input type="text" id="desc" name="desc" required />
-        
-        <label htmlFor="link">Job Link:</label>
-        <textarea id="link" name="link" required></textarea>
-  
-        <label htmlFor="tag">Job tag:</label>
-        <textarea id="tag" name="tag" required></textarea>
-        
-        <button>Submit</button>
-      </form>
+          <input type="text" placeholder="Company" id="company" name="company" required />
+
+          <input type="text" placeholder="Remote, Onsite, or Hybrid" id="tag" name="tag" required />
+
+          <input type="text" placeholder="Fulltime, Partime or Contract" id="type" name="type" required />
+
+          <input type="text" placeholder="Salray range" id="salary" name="salary" required />
+
+          <textarea rows="4" cols="20" placeholder="Job requirements" id="desc" name="desc"></textarea>
+          
+          <textarea rows="4" cols="20" placeholder="Expectations" id="todo" name="todo" ></textarea>
+    
+          <textarea rows="4" cols="20" placeholder="Reuirements" id="req" name="req" ></textarea>
+          
+          <input type="text" placeholder="Application link" id="link" name="link" required />
+
+          <button className="btn ">Submit</button>
+        </form>
+      </section>
+
     </Common>
   );
 }
