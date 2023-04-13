@@ -16,6 +16,8 @@ textarea{
     resize: none;
     margin: 2px 10px;
     padding: 10px;
+    font-size: 20px;
+    border-radius: 5px;
 }
 textarea:focus, textarea:hover{
     outline-color: var(--MAIN-COLOR);
@@ -26,7 +28,7 @@ form{
 
 
 /*Add page*/
-.job-form-wrapper{
+.form-wrapper{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -37,4 +39,21 @@ form{
     align-items: center;
     flex-direction: column;
     gap: 40px
+}
+
+.login-wrapper, .register-wrapper{
+    display: flex;
+    height: 90vh;
+    justify-content: center;
+}
+.login, .register{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 40px
+}
+.auth-form{
+    flex-direction: column;
+    gap: 20px
 }

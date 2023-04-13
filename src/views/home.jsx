@@ -1,6 +1,9 @@
 const React = require('react');
 const Common = require('./layouts/common')
 const Nav = require('./layouts/navbar')
+const Footer = require('./layouts/footer')
+
+
 
 function Home(props) {
     return (
@@ -8,7 +11,7 @@ function Home(props) {
             <Nav />
             <div className="header-wrapper">
                 <h2 className="header-text">Jobs Feed</h2>
-                <a href="/jobs/add"><button className="btn add">Add new job</button> </a>
+                <a href="/jobs/add"><button className="btn add-btn">Add new job</button> </a>
             </div>
 
             <section className='job'>
@@ -30,9 +33,15 @@ function Home(props) {
 
                         <div className='job-salary'>$2000 - $3000 monthly</div>
                         <p className='job-date'>Posted 3 days ago</p>
+
+                        <section className='edit-delete-wrapper'>
+                                <div className='edit'><img src="/img/edit.png" alt="edit-icon"/></div>
+                                <div className='delete'><img src="/img/delete.png" alt="delete-icon"/></div>
+                        </section>
                     </div>
                 ))}
             </section>
+            <Footer />
         </Common>
     );
 }

@@ -1,6 +1,7 @@
 const React = require('react');
 const Common = require('./layouts/common')
 const Nav = require('./layouts/navbar')
+const Footer = require('./layouts/footer')
 
 
 function Addjob(props) {
@@ -8,7 +9,7 @@ function Addjob(props) {
     <Common>
       <Nav />
       
-      <section className="job-form-wrapper">
+      <section className="form-wrapper">
         <form action="/jobs/add" className="job-form" method="POST">
           <input type="text" placeholder="Job Title" id="title" name="title" required />
 
@@ -32,6 +33,7 @@ function Addjob(props) {
         </form>
       </section>
 
+      <Footer />
     </Common>
   );
 }

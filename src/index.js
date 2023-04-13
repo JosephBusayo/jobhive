@@ -13,6 +13,7 @@ require('./strategies/local')
 require('./strategies/github')
 
 
+
 // middleware
 app.set("views", __dirname + "/views");
 app.set("view engine", "jsx");
@@ -38,7 +39,11 @@ app.use(passport.session())
 //routes
 app.use('/jobs', jobRoute)
 app.use('/auth', authRoute)
-
+/* app.use(function (req, res, next) {
+    res.locals.login = req.isAuthenticated();
+    console.log(res.locals.login)
+    next();
+}); */
 
 
 DB().then(() => {

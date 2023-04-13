@@ -6,15 +6,17 @@ function Navbar(props) {
     return (
         <Common>
             <div className="nav">
-                <div className="logo-wrapper">
-                    <p>J</p>
-                    <div className="logo-image"> <img src="/img/hive.png"/> </div> 
-                    <p>bhive</p>
-                </div>
+                <a href="/jobs">
+                    <div className="logo-wrapper">
+                        <p>J</p>
+                        <div className="logo-image"> <img src="/img/hive.png"/> </div> 
+                        <p>bhive</p>
+                    </div>
+                </a>
 
                 <div className="nav-btn-wrapper">
-                    <a href="/auth/login"> <button className="btn login">Login</button> </a>
-                    <a href="/auth/register"> <button className="btn register">Register</button> </a>
+                    <a href="/auth/login"> <button className="btn login-btn">Login</button> </a>
+                    <a href="/auth/register"> <button className="btn register-btn">Register</button> </a>
                 </div>
             </div>
 
