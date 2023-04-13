@@ -7,8 +7,12 @@ const router = Router()
 router.get('/', async (req, res) => {
     try {
         const result = await Job.find().sort({createdAt: -1})
-        res.render('home', {title: 'Home', jobs: result})
-        //res.send(result)
+        if(req.user){
+            res.render('home', {title: 'Home', jobs: result, isButtonDisabled: false})
+            //res.send(result)
+        }else{
+            res.render('home', {title: 'Home', jobs: result, isButtonDisabled: true})
+        }
     } catch (err) {
         console.log(err)
     }

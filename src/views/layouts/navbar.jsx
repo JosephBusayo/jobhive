@@ -17,6 +17,10 @@ function Navbar(props) {
                 <div className="nav-btn-wrapper">
                     <a href="/auth/login"> <button className="btn login-btn">Login</button> </a>
                     <a href="/auth/register"> <button className="btn register-btn">Register</button> </a>
+
+                    <form action="/auth/logout" className="btn register-btn" method="POST">
+                        <button className='btn continue'>Logout</button>
+                    </form>
                 </div>
             </div>
 

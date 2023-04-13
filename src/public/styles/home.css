@@ -33,6 +33,10 @@ a{
 .btn:hover{
     cursor: pointer;
 }
+.btn:disabled{
+    opacity: 0.3;
+    cursor: not-allowed; 
+}
 .header-wrapper, .job{
     padding-left: 10px;
     padding-right: 10px;

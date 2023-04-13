@@ -6,12 +6,14 @@ const Footer = require('./layouts/footer')
 
 
 function Home(props) {
+    const { isButtonDisabled } = props;
     return (
         <Common>
             <Nav />
             <div className="header-wrapper">
                 <h2 className="header-text">Jobs Feed</h2>
-                <a href="/jobs/add"><button className="btn add-btn">Add new job</button> </a>
+
+                <a href="/jobs/add"><button className="btn add-btn" disabled={isButtonDisabled}>Add new job</button> </a>
             </div>
 
             <section className='job'>
