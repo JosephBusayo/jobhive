@@ -3,6 +3,8 @@ const Common = require('./common')
 
 
 function Navbar(props) {
+    const { NavDisplay } = props; //this prop is passed from home view not from any route
+
     return (
         <Common>
             <div className="nav">
@@ -14,14 +16,14 @@ function Navbar(props) {
                     </div>
                 </a>
 
-                <div className="nav-btn-wrapper">
+                <div className="nav-btn-wrapper" style={{display: NavDisplay ? 'none' : ''}} >
                     <a href="/auth/login"> <button className="btn login-btn">Login</button> </a>
                     <a href="/auth/register"> <button className="btn register-btn">Register</button> </a>
-
-                    <form action="/auth/logout" className="btn register-btn" method="POST">
-                        <button className='btn continue'>Logout</button>
-                    </form>
                 </div>
+
+                <form style={{display: NavDisplay ? '' : 'none'}} action="/auth/logout" className="btn register-btn" method="POST">
+                    <button className='btn'>Logout</button>
+                </form>
             </div>
 
         </Common>

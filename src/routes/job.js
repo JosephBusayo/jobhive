@@ -3,20 +3,20 @@ const { Router } = require('express')
 const router = Router()
 
 
-
 router.get('/', async (req, res) => {
     try {
         const result = await Job.find().sort({createdAt: -1})
         if(req.user){
-            res.render('home', {title: 'Home', jobs: result, isButtonDisabled: false})
+            res.render('home', {title: 'Home', jobs: result, display: true})
             //res.send(result)
         }else{
-            res.render('home', {title: 'Home', jobs: result, isButtonDisabled: true})
+            res.render('home', {title: 'Home', jobs: result, display: false})
         }
     } catch (err) {
         console.log(err)
     }
 })
+
 
 
 router.get('/add', (req, res) => {

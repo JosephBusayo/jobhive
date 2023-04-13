@@ -6,14 +6,19 @@ const Footer = require('./layouts/footer')
 
 
 function Home(props) {
-    const { isButtonDisabled } = props;
+    const { display } = props; //paased dispaly prop from route
+    const show = display ? '' : 'none';
+
+
     return (
         <Common>
-            <Nav />
+            <Nav 
+                NavDisplay = {display}
+            />
             <div className="header-wrapper">
                 <h2 className="header-text">Jobs Feed</h2>
 
-                <a href="/jobs/add"><button className="btn add-btn" disabled={isButtonDisabled}>Add new job</button> </a>
+                <a href="/jobs/add" style={{display: show}} ><button className="btn add-btn">Add new job</button> </a>
             </div>
 
             <section className='job'>
