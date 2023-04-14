@@ -1,56 +1,52 @@
 /*JOB*/
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Quicksand';
 }
-:root{
-    --MAIN-COLOR : #ed8d01
+:root {
+    --MAIN-COLOR: #ed8d01
 }
-img{
+img {
     display: block;
     width: 20px;
 }
-body{
+body {
     margin: 0 auto;
     padding: 10px 20px;
     max-width: 1440px;
 }
-a{
+a {
     text-decoration: none;
 }
-.btn{
+.btn {
     background-color: var(--MAIN-COLOR);
     padding: 12px 20px;
     color: white;
 
     border: none;
     outline: none;
-    border-radius:5px;
+    border-radius: 5px;
     font-size: 20px;
 }
-.btn:hover{
+.btn:hover {
     cursor: pointer;
 }
-.btn:disabled{
-    opacity: 0.3;
-    cursor: not-allowed; 
-}
-.header-wrapper, .job{
+.header-wrapper,
+.job {
     padding-left: 10px;
     padding-right: 10px;
 }
 
 
-/*LAPTOP SCREEN*/
-.nav{
+.nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 40px;
 }
-.logo-wrapper{
+.logo-wrapper {
     display: flex;
     align-items: center;
     gap: 1px;
@@ -60,39 +56,39 @@ a{
 
     padding: 40px 0;
 }
-.nav-btn-wrapper{
+.nav-btn-wrapper {
     display: flex;
     gap: 20px;
 }
 
-.login-btn:hover{
+.login-btn:hover {
     color: var(--MAIN-COLOR);
     background-color: transparent;
 }
-.register-btn{
+.register-btn {
     background-color: transparent;
     color: var(--MAIN-COLOR);
 }
-.register-btn:hover{
+.register-btn:hover {
     border: 1px solid var(--MAIN-COLOR);
 }
 
 /*body*/
-.header-wrapper{
+.header-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.header-text{
+.header-text {
     font-size: 28px;
     line-height: 28px;
     margin: 40px 0
 }
-.add{
+.add {
     background: #C4FFD1;
     color: black
 }
-.job{
+.job {
     display: flex;
     justify-content: center;
     gap: 30px;
@@ -100,73 +96,81 @@ a{
     width: fit-content;
 }
 
-.job-detail-container{
+.job-detail-container {
     background: #FFFFFF;
     box-shadow: 2px 2px 10px 1px rgba(147, 147, 147, 0.35);
     border-radius: 12px;
 
     display: flex;
     flex-direction: column;
-    gap:14px;
+    gap: 14px;
     justify-content: space-evenly;
     padding: 20px 30px;
     min-width: 370px;
     transition: transform 0.7s ease;
 }
-.job-detail-container:hover{
+.job-detail-container:hover {
     transform: scale(1.02);
     cursor: pointer;
 }
 
-.job-title{
+.job-title {
     font-family: 'Quicksand';
     font-weight: 700;
     font-size: 24px;
     line-height: 23px;
     color: var(--MAIN-COLOR);
 }
-.job-loc-wrapper, .job-tag-wrapper{
+.job-loc-wrapper,
+.job-tag-wrapper {
     display: flex;
     align-items: center;
     gap: 15px
 }
-.loc-icon, .tag-icon, .logo-image{
+.loc-icon,
+.tag-icon,
+.logo-image {
     width: fit-content;
 }
-.job-loc, .job-tag, .job-salary, .job-type{
+.job-loc,
+.job-tag,
+.job-salary,
+.job-type {
     font-size: 20px;
     line-height: 20px;
     width: fit-content;
 }
-.job-type{
+.job-type {
     background: #C4FFD1;
     border-radius: 3px;
     padding: 10px 24px;
 }
-.job-salary{
+.job-salary {
     background: rgb(101, 101, 232);
     border-radius: 5px;
     color: white;
     padding: 10px 24px;
 }
-.job-date{
+.job-date {
     font-size: 18px;
     line-height: 18px;
 }
-.edit-delete-wrapper{
+.edit-delete-wrapper {
     display: flex;
     gap: 20px
 }
-.edit,.delete{
+.edit,
+.delete {
     width: 14px;
 }
 
-.edit:hover, .delete:hover{
+.edit:hover,
+.delete:hover {
     transform: scale(1.3);
 }
 
 /*footer*/
-.footer{
+.footer {
     display: flex;
     justify-content: space-between;
     padding: 40px 20px;

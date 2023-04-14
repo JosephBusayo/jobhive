@@ -41,7 +41,7 @@ function Home(props) {
                         <div className='job-salary'>$2000 - $3000 monthly</div>
                         <p className='job-date'>Posted 3 days ago</p>
 
-                        <section className='edit-delete-wrapper'>
+                        <section className='edit-delete-wrapper' style={{display: show}}>
                                 <div className='edit'><img src="/img/edit.png" alt="edit-icon"/></div>
                                 <div className='delete'><img src="/img/delete.png" alt="delete-icon"/></div>
                         </section>

@@ -38,7 +38,22 @@ router.post('/add', async (req, res) => {
 })
 
 router.delete('/deletejob', async (req, res) => {
-    
+    const id = req.params.id
+
+    Job.findByIdAndDelete(id)
+    .then((result) => { res.send("Sucessfully deleted")})
+    .catch(err => { res.send(err)})
+})
+
+router.delete('/delete-job/:id', async (req,res) => {
+    const {id }= req.body
+
+    try{
+        await Job.findByIdAndDelete(id)
+        res.redirect('/jobs')
+    }catch(err) {
+        console.log(err)
+    }
 })
 
 module.exports = router
