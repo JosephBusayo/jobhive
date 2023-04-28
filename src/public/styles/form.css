@@ -25,7 +25,10 @@ textarea:focus, textarea:hover{
 form{
     margin: 0 auto;
 }
-
+.delete-btn{
+    border: none;
+    outline: none;
+}
 
 /*Add page*/
 .form-wrapper{

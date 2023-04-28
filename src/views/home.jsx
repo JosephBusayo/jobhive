@@ -9,44 +9,72 @@ function Home(props) {
     const { display } = props; //paased dispaly prop from route
     const show = display ? '' : 'none';
 
+/*     const currentDate = new Date();
+    const createdAtDate = new Date(job.createdAt);
+    const oneDayMs = 24 * 60 * 60 * 1000;
+    const daysSinceCreation = Math.floor((currentDate.getTime() - createdAtDate.getTime()) / oneDayMs);
+ */
 
     return (
         <Common>
-            <Nav 
-                NavDisplay = {display}
+            <Nav
+                NavDisplay={display}
             />
             <div className="header-wrapper">
-                <h2 className="header-text">Jobs Feed</h2>
+                <h2 className="header-text">Admin Dashboard</h2>
 
-                <a href="/jobs/add" style={{display: show}} ><button className="btn add-btn">Add new job</button> </a>
+                <a href="/jobs/add" style={{ display: show }} ><button className="btn add-btn">&#43;Add new job</button> </a>
             </div>
 
             <section className='job'>
                 {props.jobs.map((job) => (
-                    <div key={job._id}  className='job-detail-container'>
+
+                    <section key={job._id} className='job-detail-container'>
                         <h2 className='job-title'>{job.title}</h2>
 
                         <div className='job-loc-wrapper'>
-                            <div className='loc-icon'><img src="/img/loc-image.png" alt="loc-icon"/></div>
+                            <div className='loc-icon'><img src="/img/loc-image.png" alt="loc-icon" /></div>
                             <p className='job-loc'>{job.company}</p>
                         </div>
 
                         <div className='job-tag-wrapper'>
-                            <div className='tag-icon'><img src="/img/tag-image.png" alt="tag-icon"/></div>
+                            <div className='tag-icon'><img src="/img/tag-image.png" alt="tag-icon" /></div>
                             <p className='job-tag'>{job.tag}</p>
                         </div>
 
                         <p className='job-type'>{job.type}</p>
 
-                        <div className='job-salary'>$2000 - $3000 monthly</div>
-                        <p className='job-date'>Posted 3 days ago</p>
+                        <div className='job-salary'>{job.salary}</div>
+                        <p className='job-date'>
+                            Posted
+                            {/* {new Date(job.createdAt).toLocaleDateString()} */}
+                            {Math.floor((new Date() - new Date(job.createdAt)) / (1000 * 60 * 60 * 24))} 
+                            <pan> days ago</pan>
+                        </p>
 
-                        <section className='edit-delete-wrapper' style={{display: show}}>
-                                <div className='edit'><img src="/img/edit.png" alt="edit-icon"/></div>
-                                <div className='delete'><img src="/img/delete.png" alt="delete-icon"/></div>
-                        </section>
-                    </div>
+
+                        <div style={{ display: show }}>
+                            <a href={`jobs/detail/${job.id}`}>
+                                {`More details>>>>`}
+                            </a>
+                        </div>
+
+                        <div className='edit-delete-wrapper'>
+                            <div className='edit'>
+                                <a href={`/jobs/${job.id}/edit`}>
+                                    <img src="/img/edit.png" alt="edit-icon" />
+                                </a>
+                            </div>
+
+                            <form action={`/jobs/delete/${job._id}?_method=DELETE`} method='POST'>
+                                <button value='DELETE' className="delete-btn">
+                                    <div className='delete'><img src="/img/delete.png" alt="delete-icon" /></div>
+                                </button>
+                            </form>
+                        </div>
+                    </section>
                 ))}
+
             </section>
             <Footer />
         </Common>

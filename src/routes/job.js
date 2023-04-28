@@ -17,8 +17,7 @@ router.get('/', async (req, res) => {
     }
 })
 
-
-
+//ADD
 router.get('/add', (req, res) => {
     try{
         res.render('addjob')
@@ -26,7 +25,6 @@ router.get('/add', (req, res) => {
         console.log(err)
     }
 })
-
 router.post('/add', async (req, res) => {
     const newJobPost = new Job(req.body)
     try{
@@ -37,23 +35,60 @@ router.post('/add', async (req, res) => {
     }
 })
 
-router.delete('/deletejob', async (req, res) => {
+//DETAIL
+router.get('/detail/:id', async (req, res) => {
     const id = req.params.id
-
-    Job.findByIdAndDelete(id)
-    .then((result) => { res.send("Sucessfully deleted")})
-    .catch(err => { res.send(err)})
+    const result = await Job.findById(id)
+    try{
+        if(req.user){
+            res.render('detail', {title: 'Detail', job: result, display: true})
+        }else{
+            res.render('detail', {title: 'Detail', job: result, display: false})
+        }
+    }
+    catch(err){
+        console.log(err)
+    }
 })
 
-router.delete('/delete-job/:id', async (req,res) => {
-    const {id }= req.body
 
+//DELETE
+router.delete('/delete/:id', async (req, res) => {
+    const id = req.params.id
+    console.log(req.params)
+
+})
+//EDIT
+router.get('/:id/edit', async (req, res) => {
+    const id = req.params.id
+    const result = await Job.findById( id )
+    try{
+        res.render('edit', {title: 'Edit', job: result} )
+    }catch(err) {
+        console.log(err)
+    }
+})
+router.put('/:id', async (req, res) => {
+    const id = req.params.id
+    const updateJob = new Job(req.body)
+    try{
+        await Job.findByIdAndUpdate(id, updateJob)
+        res.redirect('/jobs')
+    } catch (err) {
+        console.log(err)
+    }
+})
+
+
+/* router.delete('/delete-job/:id', async (req,res) => {
+    const {id }= req.body
     try{
         await Job.findByIdAndDelete(id)
         res.redirect('/jobs')
     }catch(err) {
         console.log(err)
     }
-})
+}) */
+
 
 module.exports = router

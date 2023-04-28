@@ -84,14 +84,21 @@ a {
     line-height: 28px;
     margin: 40px 0
 }
-.add {
+.add-btn{
+    border: 2px solid #C4FFD1;
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+    background-color: transparent;
+}
+.add-btn:hover{
     background: #C4FFD1;
-    color: black
 }
 .job {
     display: flex;
     justify-content: center;
-    gap: 30px;
+    row-gap: 60px;
+    column-gap: 40px;
     flex-wrap: wrap;
     width: fit-content;
 }
@@ -157,7 +164,6 @@ a {
 }
 .edit-delete-wrapper {
     display: flex;
-    gap: 20px
 }
 .edit,
 .delete {
@@ -176,4 +182,30 @@ a {
     padding: 40px 20px;
     margin-top: 60px;
 
+}
+
+
+
+/*DETAIL PAGE */
+.detail-upper{
+    display: flex; 
+    gap: 20px;
+    flex-direction: column;
+}
+.detail-title{
+    font-size: 30px;
+}
+.detail-lower{
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+.detail-lower > div > h5{
+    font-size:28px
+}
+.detail-lower > div > p{
+    font-size:24px
+}
+.job-details-header{
+    margin: 30px 0
 }

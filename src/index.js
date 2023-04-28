@@ -25,6 +25,7 @@ app.use(express.urlencoded({ extended: true }))
 app.use(
     session({
         secret : "ADDFERMTYY2",
+        
         resave: false,
         saveUninitialized : false,
         store : MongoStore.create({
@@ -39,6 +40,7 @@ app.use(function (req, res, next) {
     res.locals.login = req.isAuthenticated();
     next();
 });
+
 
 //routes
 app.use('/jobs', jobRoute)
@@ -55,7 +57,6 @@ DB().then(() => {
         console.log(`Listening on port ${PORT}`)
     })
 })
-
 
 
 
