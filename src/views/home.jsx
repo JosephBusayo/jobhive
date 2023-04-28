@@ -9,27 +9,6 @@ function Home(props) {
     const { display } = props; //paased dispaly prop from route
     const show = display ? '' : 'none';
 
-    const handleDelete = (id) => {
-        if (!id) {
-            console.error('Invalid job ID:', id);
-            return;
-        }
-        let endpoint = `/jobs/delete/${id}`
-
-        fetch(endpoint, {
-            method: 'DELETE',
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
-            .then(response => response.json())
-            .then((data) => window.location.href = data.redirect)
-            .catch(error => {
-                console.log(error);
-            });
-    }
-
-
 
     return (
         <Common>
@@ -82,11 +61,11 @@ function Home(props) {
                                 </a>
                             </div>
 
-                            <a onClick={handleDelete(job.id)}>
+                            <form action={`/jobs/delete/${job.id}?_method=DELETE`} method="POST">
                                 <button value='DELETE' className="delete-btn">
                                     <div className='delete'><img src="/img/delete.png" alt="delete-icon" /></div>
                                 </button>
-                            </a>
+                            </form>
                         </div>
                     </section>
                 ))}

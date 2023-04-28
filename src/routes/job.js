@@ -73,7 +73,7 @@ router.delete('/delete/:id', async (req, res) => {
     const id = req.params.id
 
     Job.findByIdAndDelete(id).then((result) => {
-        res.json({redirect: '/jobs'})
+        res.redirect('/jobs')
     }).catch(err => {
         console.log(err)
     })
@@ -93,9 +93,7 @@ router.get('/:id/edit', async (req, res) => {
 })
 router.put('/:id/edit', async (req, res) => {
     const id = req.params.id
-    const updateJob = {
-        ...req.body
-    };
+    const updateJob = { ...req.body };
     delete updateJob._id;
 
     try {

@@ -21,11 +21,11 @@ function Addjob(props) {
 
           <input type="text" placeholder="Salray range" id="salary" name="salary" required />
 
-          <textarea rows="4" cols="20" placeholder="Job requirements" id="desc" name="desc"></textarea>
+          <textarea rows="4" cols="20" placeholder="Description" id="desc" name="desc"></textarea>
           
           <textarea rows="4" cols="20" placeholder="Expectations" id="todo" name="todo" ></textarea>
     
-          <textarea rows="4" cols="20" placeholder="Reuirements" id="req" name="req" ></textarea>
+          <textarea rows="4" cols="20" placeholder="Job Requirements" id="req" name="req" ></textarea>
           
           <input type="text" placeholder="Application link" id="link" name="link" required />
 
