@@ -9,7 +9,7 @@ function Editjob({ job }) {
         <Common>
             <Nav />
             <section className="form-wrapper">
-                <form action={`/jobs/${job.id}?_method=PUT`} className="job-form" method="POST">
+                <form action={`/jobs/${job.id}/edit?_method=PUT`} className="job-form" method="POST">
                     <p>{job.title}</p>
                     <input type="text" id="title" name="title" required defaultValue={job.title} />
 

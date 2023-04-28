@@ -9,6 +9,9 @@ const app = express()
 const PORT = process.env.PORT || 4001
 const jobRoute = require('./routes/job')
 const authRoute = require('./routes/auth')
+
+const methodOverride = require('method-override')
+
 require('./strategies/local')
 require('./strategies/github')
 
@@ -20,6 +23,8 @@ app.set("views", __dirname + "/views");
 app.set("view engine", "jsx");
 app.engine("jsx", require("express-react-views").createEngine());
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(methodOverride('_method'))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true })) 
 app.use(
