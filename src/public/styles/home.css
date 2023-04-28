@@ -164,6 +164,7 @@ a {
 }
 .edit-delete-wrapper {
     display: flex;
+    gap: 30px
 }
 .edit,
 .delete {

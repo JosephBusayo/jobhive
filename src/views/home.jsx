@@ -9,11 +9,27 @@ function Home(props) {
     const { display } = props; //paased dispaly prop from route
     const show = display ? '' : 'none';
 
-/*     const currentDate = new Date();
-    const createdAtDate = new Date(job.createdAt);
-    const oneDayMs = 24 * 60 * 60 * 1000;
-    const daysSinceCreation = Math.floor((currentDate.getTime() - createdAtDate.getTime()) / oneDayMs);
- */
+    const handleDelete = (id) => {
+        if (!id) {
+            console.error('Invalid job ID:', id);
+            return;
+        }
+        let endpoint = `/jobs/delete/${id}`
+
+        fetch(endpoint, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+            .then(response => response.json())
+            .then((data) => window.location.href = data.redirect)
+            .catch(error => {
+                console.log(error);
+            });
+    }
+
+
 
     return (
         <Common>
@@ -48,7 +64,7 @@ function Home(props) {
                         <p className='job-date'>
                             Posted
                             {/* {new Date(job.createdAt).toLocaleDateString()} */}
-                            {Math.floor((new Date() - new Date(job.createdAt)) / (1000 * 60 * 60 * 24))} 
+                            {Math.floor((new Date() - new Date(job.createdAt)) / (1000 * 60 * 60 * 24))}
                             <pan> days ago</pan>
                         </p>
 
@@ -59,18 +75,18 @@ function Home(props) {
                             </a>
                         </div>
 
-                        <div className='edit-delete-wrapper'>
+                        <div className='edit-delete-wrapper' style={{ display: show }}>
                             <div className='edit'>
                                 <a href={`/jobs/${job.id}/edit`}>
                                     <img src="/img/edit.png" alt="edit-icon" />
                                 </a>
                             </div>
 
-                            <form action={`/jobs/delete/${job._id}?_method=DELETE`} method='POST'>
+                            <a onClick={handleDelete(job.id)}>
                                 <button value='DELETE' className="delete-btn">
                                     <div className='delete'><img src="/img/delete.png" alt="delete-icon" /></div>
                                 </button>
-                            </form>
+                            </a>
                         </div>
                     </section>
                 ))}

@@ -35,6 +35,7 @@ router.post('/add', async (req, res) => {
     }
 })
 
+
 //DETAIL
 router.get('/detail/:id', async (req, res) => {
     const id = req.params.id
@@ -55,8 +56,14 @@ router.get('/detail/:id', async (req, res) => {
 //DELETE
 router.delete('/delete/:id', async (req, res) => {
     const id = req.params.id
-    console.log(req.params)
 
+    Job.findByIdAndDelete(id)
+        .then((result) => {
+            res.json({ redirect: '/jobs'})
+        })
+        .catch(err => {
+            console.log(err)
+        })
 })
 //EDIT
 router.get('/:id/edit', async (req, res) => {
@@ -78,7 +85,6 @@ router.put('/:id', async (req, res) => {
         console.log(err)
     }
 })
-
 
 /* router.delete('/delete-job/:id', async (req,res) => {
     const {id }= req.body
