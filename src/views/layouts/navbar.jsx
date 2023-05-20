@@ -9,7 +9,7 @@ function Navbar(props) {
         <Common>
             <div className="nav">
                 <a href="/jobs">
-                    <h2 className='logo'>Job<span className='logo-span'>spot</span></h2>
+                    <h2 className='logo'>Job<span className='logo-span'>hive</span></h2>
                 </a>
 
                 <div>
