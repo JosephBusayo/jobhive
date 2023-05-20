@@ -1,9 +1,10 @@
-/*JOB*/
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300&display=swap');
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Quicksand';
+    font-family: 'Noto Sans';
+
 }
 :root {
     --MAIN-COLOR: #ed8d01
@@ -38,7 +39,15 @@ a {
     padding-left: 10px;
     padding-right: 10px;
 }
-
+.logo{
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 30px;
+    color: #F7941E;
+}
+.logo-span{
+    color: black
+}
 
 .nav {
     display: flex;
@@ -80,7 +89,7 @@ a {
     align-items: center;
 }
 .header-text {
-    font-size: 28px;
+    font-size: 22px;
     line-height: 28px;
     margin: 40px 0
 }

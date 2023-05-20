@@ -7,27 +7,23 @@ function Navbar(props) {
 
     return (
         <Common>
-                <div className="nav">
-                    <a href="/jobs">
-                        <div className="logo-wrapper">
-                            <p>J</p>
-                            <div className="logo-image"> <img src="/img/hive.png"/> </div> 
-                            <p>bhive</p>
-                        </div>
-                    </a>
+            <div className="nav">
+                <a href="/jobs">
+                    <h2 className='logo'>Job<span className='logo-span'>spot</span></h2>
+                </a>
 
-                    <div>
-                        <div className="nav-btn-wrapper" style={{display: NavDisplay ? 'none' : ''}} >
-                            <a href="/auth/login"> <button className="btn login-btn">Login</button> </a>
-                            <a href="/auth/register"> <button className="btn register-btn">Register</button> </a>
-                        </div>
-
-                        <form style={{display: NavDisplay ? '' : 'none'}} action="/auth/logout" className="" method="POST">
-                            <button className='btn'>Logout</button>
-                        </form>
+                <div>
+                    <div className="nav-btn-wrapper" style={{ display: NavDisplay ? 'none' : '' }} >
+                        <a href="/auth/login"> <button className="btn login-btn">Login</button> </a>
+                        <a href="/auth/register"> <button className="btn register-btn">Register</button> </a>
                     </div>
 
+                    <form style={{ display: NavDisplay ? '' : 'none' }} action="/auth/logout" className="" method="POST">
+                        <button className='btn'>Logout</button>
+                    </form>
                 </div>
+
+            </div>
         </Common>
     );
 }
