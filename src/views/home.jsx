@@ -41,14 +41,12 @@ function Home(props) {
 
                         <div className='job-salary'>{job.salary}</div>
                         <p className='job-date'>
-                            Posted
-                            {/* {new Date(job.createdAt).toLocaleDateString()} */}
-                            {Math.floor((new Date() - new Date(job.createdAt)) / (1000 * 60 * 60 * 24))}
-                            <pan> days ago</pan>
+                            {`Posted ${Math.floor((new Date() - new Date(job.createdAt)) / (1000 * 60 * 60 * 24))} `}
+                            <span> days ago</span>
                         </p>
 
 
-                        <div style={{ display: show }}>
+                        <div>
                             <a href={`jobs/detail/${job.id}`}>
                                 {`More details>>>>`}
                             </a>
