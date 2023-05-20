@@ -16,7 +16,7 @@ function Home(props) {
                 NavDisplay={display}
             />
             <div className="header-wrapper">
-                <h2 className="header-text">Admin Dashboard</h2>
+                <h2 className="header-text">Job Feed</h2>
 
                 <a href="/jobs/add" style={{ display: show }} ><button className="btn add-btn">&#43;Add new job</button> </a>
             </div>

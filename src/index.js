@@ -16,7 +16,6 @@ require('./strategies/local')
 require('./strategies/github')
 
 
-
 // middleware
 app.set("views", __dirname + "/views");
 app.set("view engine", "jsx");
